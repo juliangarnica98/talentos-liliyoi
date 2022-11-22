@@ -48,7 +48,8 @@
         <section class="page-section bg-dark text-white" id="work">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">¿Quieres ser parte de nuestro equipo?</h2>
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Información</a>
+                <router-link class="btn btn-light btn-xl" to="/vacantes">Información</router-link>
+                <!-- <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Información</a> -->
             </div>
         </section>
         <!-- Services-->
@@ -214,40 +215,8 @@
                 
             </div>
         </section>
-        <!-- Footer-->
-        <!-- Remove the container if you want to extend the Footer to full width. -->
-        <div class="my-5">
-
-            <footer class="bg-dark text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <footer-component></footer-component>
         
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-        
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-        
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-        
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://www.lilipink.com/">lilipink.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-            
-        </div>
     </div>
 </template>
 
@@ -255,6 +224,9 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        components(){
+            
         },
         data(){
                 return{
@@ -268,3 +240,87 @@
             }
     }
 </script>
+
+
+<!-- <template>
+    <v-card
+      class="mx-auto"
+      max-width="500"
+    >
+      <v-system-bar
+        color="indigo darken-2"
+        dark
+      >
+        <v-spacer></v-spacer>
+  
+        <v-icon>mdi-window-minimize</v-icon>
+  
+        <v-icon>mdi-window-maximize</v-icon>
+  
+        <v-icon>mdi-close</v-icon>
+      </v-system-bar>
+  
+      <v-toolbar
+        color="indigo"
+        dark
+      >
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  
+        <v-toolbar-title>Discover</v-toolbar-title>
+  
+        <v-spacer></v-spacer>
+  
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </v-toolbar>
+  
+      <v-container fluid>
+        <v-row dense>
+          <v-col
+            v-for="card in cards"
+            :key="card.title"
+            :cols="card.flex"
+          >
+            <v-card>
+              <v-img
+                :src="card.src"
+                class="white--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                height="200px"
+              >
+                <v-card-title v-text="card.title"></v-card-title>
+              </v-img>
+  
+              <v-card-actions>
+                <v-spacer></v-spacer>
+  
+                <v-btn icon>
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+  
+                <v-btn icon>
+                  <v-icon>mdi-bookmark</v-icon>
+                </v-btn>
+  
+                <v-btn icon>
+                  <v-icon>mdi-share-variant</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+  </template>
+  <script>
+  export default {
+    data: () => ({
+      cards: [
+        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+      ],
+    }),
+  }
+</script> -->

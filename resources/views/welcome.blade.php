@@ -25,7 +25,9 @@
     </head>
     <body id="page-top">
         <div id="app">
-            <page-inicio></page-inicio>
+            <v-app>
+                <router-view></router-view>
+            </v-app>
         </div>
         
         <!-- End of .container -->

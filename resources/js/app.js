@@ -7,26 +7,40 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.use(Vuetify);
+Vue.use(VueRouter);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.component('page-inicio', require('./components/page-init/WelcomeComponent.vue').default);
+Vue.component('page-vacantes', require('./components/page-init/VacanteComponent.vue').default);
 
-Vue.component('page-inicio', require('./components/WelcomeComponent.vue').default);
+let app_home_page_inicio = { template:`<page-inicio></page-inicio>`}
+let app_home_vacantes = { template:`<page-vacantes></page-vacantes>`}
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+const router = new VueRouter({
+    routes: [
+        { path: '/', name:'home', component: app_home_page_inicio },
+        { path: '/vacantes', name:'vancantes', component: app_home_vacantes },
+    ],
+    mode: "history"
+})
 
 const app = new Vue({
+    router,
     el: '#app',
+    vuetify: new Vuetify({
+        iconfont: 'mdi',
+        theme: {
+            themes: {
+                light: {
+                    link: "#FFFFFF",
+                    primary: "#F1D109"
+                }
+            }
+        }
+    })
 });
