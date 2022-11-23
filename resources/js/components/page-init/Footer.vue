@@ -1,5 +1,5 @@
 <template>
-    <div class="my-5">
+    <div class="">
         <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
             <div class="container p-4 pb-0">

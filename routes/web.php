@@ -23,6 +23,5 @@ Route::get('/vacantes', function () { return view('welcome');});
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::post('/candidate.store', [App\Http\Controllers\CandidateController::class, 'store'])->name('candidate.store');
 Route::get('/vacant.index', [App\Http\Controllers\VacantController::class, 'index'])->name('vacant.index');

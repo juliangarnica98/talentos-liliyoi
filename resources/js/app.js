@@ -38,7 +38,7 @@ const app = new Vue({
             themes: {
                 light: {
                     link: "#FFFFFF",
-                    primary: "#F1D109"
+                    primary: "#fc007e"
                 }
             }
         }
